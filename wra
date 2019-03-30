@@ -2,7 +2,7 @@
 
 setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll
 setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll
-wrapper.vs
+wrapper.gxx
 
 exit
 
