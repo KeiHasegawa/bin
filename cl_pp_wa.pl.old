@@ -1,0 +1,27 @@
+#! /usr/bin/env perl
+
+$state = 0;
+
+while ( <> ) {
+    chop;
+    s/__pragma/\#pragma/;
+    s/__declspec\(noreturn\)//;
+    s/__declspec\(deprecated.*\)//;
+    s/__declspec\(allocator\)//;
+    s/__declspec\(restrict\)//;
+    s/__va_start\(&(.*),(.*)\)/__builtin_va_start(\1,\2)/;
+    if ($state == 0 && /^    __declspec\(noinline\) inline unsigned long long\*  (.*)\(void\)/) {
+	$state = 1;
+	s/__declspec\(noinline\) inline //;
+	s/\(void\)/\(void\);/;
+    }
+    elsif ($state == 1) {
+	if (/^    }/) {
+	    $state = 0;
+	    next;
+	}
+	next;
+    }
+
+    print $_, "\n";
+}

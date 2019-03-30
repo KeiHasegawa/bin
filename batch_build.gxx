@@ -1,0 +1,29 @@
+#! /bin/csh -f
+
+#setenv BATCH_BUILD_GXX_CLEAN
+#setenv BATCH_BUILD_GXX_OPTIMIZE
+
+foreach dir ( \
+$LANG_PROJECT_ROOT/10_hcpp/src \
+$LANG_PROJECT_ROOT/20_hcc1/src \
+$LANG_PROJECT_ROOT/21_hcxx1/src \
+$LANG_PROJECT_ROOT/30_intel/src \
+$LANG_PROJECT_ROOT/31_sparc/src \
+$LANG_PROJECT_ROOT/32_ppc/src \
+$LANG_PROJECT_ROOT/33_spu/src \
+$LANG_PROJECT_ROOT/37_tacsim/src \
+$LANG_PROJECT_ROOT/38_printf_chk/src \
+$LANG_PROJECT_ROOT/39_docgen/src \
+$LANG_PROJECT_ROOT/39_docgen/doclink \
+            )
+	    pushd $dir
+	    if ($?BATCH_BUILD_GXX_CLEAN) then
+	      make clean || exit 1
+	    else if ($?BATCH_BUILD_GXX_OPTIMIZE) then
+	      make 'DEBUG_FLAG = -O3' || exit 1
+	    else
+	      make || exit 1
+	    endif
+	    endif
+	    popd
+end

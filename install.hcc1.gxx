@@ -1,0 +1,23 @@
+#! /bin/csh -f
+
+cp $LANG_PROJECT_ROOT/10_hcpp/src/hcpp.exe \
+   $LANG_PROJECT_ROOT/20_hcc1/src/hcc1.exe \
+   $LANG_PROJECT_ROOT/30_intel/src/intel.dll \
+   $LANG_PROJECT_ROOT/31_sparc/src/sparc.dll \
+   $LANG_PROJECT_ROOT/32_ppc/src/ppc.dll \
+   $LANG_PROJECT_ROOT/33_spu/src/spu.dll \
+   $LANG_PROJECT_ROOT/37_tacsim/src/tacsim.dll \
+   $LANG_PROJECT_ROOT/38_printf_chk/src/printf_chk.dll \
+   $LANG_PROJECT_ROOT/39_docgen/src/docgen.dll \
+   $LANG_PROJECT_ROOT/39_docgen/doclink/doclink.exe \
+   $LANG_PROJECT_ROOT/bin
+
+cp $LANG_PROJECT_ROOT/21_hcxx1/src/hcxx1.exe \
+   $LANG_PROJECT_ROOT/30_intel/src/intelxx.dll \
+   $LANG_PROJECT_ROOT/31_sparc/src/sparcxx.dll \
+   $LANG_PROJECT_ROOT/32_ppc/src/ppcxx.dll \
+   $LANG_PROJECT_ROOT/33_spu/src/spuxx.dll \
+   $LANG_PROJECT_ROOT/37_tacsim/src/tacsimxx.dll \
+   $LANG_PROJECT_ROOT/38_printf_chk/src/printf_chkxx.dll \
+   $LANG_PROJECT_ROOT/39_docgen/src/docgenxx.dll \
+   $LANG_PROJECT_ROOT/bin

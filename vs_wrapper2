@@ -1,0 +1,33 @@
+#! /bin/csh -vxf
+
+if (x$argv[1] != x"-o") then
+  echo "usage % $0 -o output.exe input.asm"
+  exit 1
+endif
+
+set output = $argv[2]
+set input_a = $argv[3]
+set input_b = $argv[4]
+if ($#argv == 5) then
+  set input_c = $argv[5]
+endif
+set dir = `pwd | sed -e 's/\/cygdrive\/c/C:/' -e 's/\/cygdrive\/d/D:/'`
+setenv VS_WRAPPER_TEST_A_ASM $dir/$input_a
+setenv VS_WRAPPER_TEST_B_ASM $dir/$input_b
+if ($#argv == 5) then
+  setenv VS_WRAPPER_TEST_C_ASM $dir/$input_c
+endif
+cd $LANG_PROJECT_ROOT/40_test_tool/vs_wrapper2
+if (x$INTEL_DLL_EXTRA_OPTION == x"--x86") then
+  MSBuild.exe '/p:Configuration=Debug;Platform=x86' /t:Rebuild
+else
+  MSBuild.exe '/p:Configuration=Debug;Platform=x64' /t:Rebuild
+endif
+if ($status != 0) then
+  exit 2
+endif
+if (x$INTEL_DLL_EXTRA_OPTION == x"--x86") then
+  mv Debug/vs_wrapper2.exe $dir/$output || exit 3
+else
+  mv x64/Debug/vs_wrapper2.exe $dir/$output || exit 3
+endif

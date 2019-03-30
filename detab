@@ -1,0 +1,6 @@
+#! /bin/csh -f
+
+foreach file (*.cpp *.h)
+  sed -e 's/\t/        /g' $file > $file.$$
+  mv $file.$$ $file
+end

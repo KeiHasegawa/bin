@@ -1,0 +1,5 @@
+#! /bin/csh -f
+
+cd $LANG_PROJECT_ROOT/40_test_tool
+make euc2sjis
+cp euc2sjis $LANG_PROJECT_ROOT/bin/euc2sjis.exe

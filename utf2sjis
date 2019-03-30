@@ -1,0 +1,5 @@
+#! /bin/csh -f
+
+utf2euc.exe > /tmp/utf2sjis.$$
+euc2sjis.exe < /tmp/utf2sjis.$$
+rm -f /tmp/utf2sjis.$$

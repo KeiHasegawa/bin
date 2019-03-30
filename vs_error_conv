@@ -1,0 +1,4 @@
+#! /bin/csh -f
+
+vs_error_conv.pl $argv[1] > $argv[1].$$
+mv $argv[1].$$ $argv[1]

@@ -1,0 +1,22 @@
+#! /bin/csh -vxf
+
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll
+wrapper.vs
+
+exit
+
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.vs
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/tacsim.dll ;     wrapper.vs
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/printf_chk.dll ; wrapper.vs
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.vs  --ms
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.vs  --ms86
+
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.gxx
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/tacsim.dll ;     wrapper.gxx
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/printf_chk.dll ; wrapper.gxx
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.gxx --ms
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.gxx --ms86
+
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll  ;  wrapper.vs
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll  ;  wrapper.gxx
