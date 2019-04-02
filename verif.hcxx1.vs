@@ -65,6 +65,6 @@ else
 if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chkxx.dll) then
 make -k 'MY_MAKEFLAGS=-k' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include -D__cplusplus -D_WCHAR_T_DEFINED -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"'
 else
-make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos.csh' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include -D__cplusplus -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' "CC1_FLAG=--generator-option \( --debug $extra_option \)"
+make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include -D__cplusplus -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' "CC1_FLAG=--generator-option \( --debug $extra_option \)"
 endif
 endif
