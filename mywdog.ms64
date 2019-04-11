@@ -1,0 +1,12 @@
+#! /bin/tcsh -f
+
+wdog.pl $argv[1] | \
+sed -e '/Linkages_of_identifiers\/1_ok:vs_wrapper2/d' \
+    -e '/0_Identifiers\/5_ok:vs_wrapper2/d' \
+    -e '/0_Identifiers\/3_ok:vs_wrapper2/d' \
+    -e '/0_Identifiers\/1_ok:vs_wrapper -o test015.exe test015.asm/d' \
+    -e '/4_Storage_durations_of_objects\/2_ok\/4_mem:vs_wrapper2/d' \
+    -e '/4_Function_specifiers\/5_ok:vs_wrapper2/d' \
+    -e '/4_Function_specifiers\/3_ok:vs_wrapper2/d' \
+    -e '/2_Function_calls\/4_param:vs_wrapper -o test046.exe test046.asm/d' \
+    -e '/4_Function_specifiers\/4_error:diff/d'
