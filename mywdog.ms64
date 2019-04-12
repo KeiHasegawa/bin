@@ -5,6 +5,8 @@ sed -e '/Linkages_of_identifiers\/1_ok:vs_wrapper2/d' \
     -e '/0_Identifiers\/5_ok:vs_wrapper2/d' \
     -e '/0_Identifiers\/3_ok:vs_wrapper2/d' \
     -e '/0_Identifiers\/1_ok:vs_wrapper -o test015.exe test015.asm/d' \
+    -e '/2_Linkages_of_identifiers\/1_ok:vs_wrapper2/d' \
+    -e '/4_Storage_durations_of_objects\/2_ok\/3_mem:vs_wrapper2/d' \
     -e '/4_Storage_durations_of_objects\/2_ok\/4_mem:vs_wrapper2/d' \
     -e '/4_Function_specifiers\/5_ok:vs_wrapper2/d' \
     -e '/4_Function_specifiers\/3_ok:vs_wrapper2/d' \
