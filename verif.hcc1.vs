@@ -60,12 +60,12 @@ if ($VERIF_REQUIRE_CLEAN == 1) then
 endif
 
 if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsim.dll) then
-make -k 'MY_MAKEFLAGS=-k' 'EUC2SJIS=cat' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' 'EXTRA_CPP_FLAG_TACSIM_VS=-DUSE_BUILTIN_VA_ARG'
+make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' 'EXTRA_CPP_FLAG_TACSIM_VS=-DUSE_BUILTIN_VA_ARG'
 else
 if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chk.dll) then
-make -k 'MY_MAKEFLAGS=-k' 'EUC2SJIS=cat' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"'
+make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"'
 else
-make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos.csh' 'EUC2SJIS=cat' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' "CC1_FLAG=--generator-option \( --debug $extra_option \)"
+make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' "CC1_FLAG=--generator-option \( --debug $extra_option \)"
 endif
 endif
 
