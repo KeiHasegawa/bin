@@ -6,7 +6,7 @@ date
 
 setenv INTEL_DLL_MS_MODE 0
 setenv INTEL_DLL_EXTRA_OPTION
-setenv DO_HCC1_TEST 1
+setenv DO_HCC1_TEST 0
 setenv DO_HCXX1_TEST 1
     
 if ($#argv == 1) then
@@ -80,7 +80,7 @@ if ($DO_HCC1_TEST == 1) then
   verif.hcc1.vs >& /tmp/46_optimization.log.vs.$date1
   pass_count.pl /tmp/46_optimization.log.vs.$date1
 
-  date
+  date +%m.%d.%H.%M
 endif  
 
 set date2 = `date +%m.%d.%H.%M`
@@ -103,5 +103,5 @@ if ($DO_HCXX1_TEST == 1) then
   verif.hcxx1.vs >& /tmp/43_ISO_IEC_14882.log.vs.$date2
   pass_count.pl /tmp/43_ISO_IEC_14882.log.vs.$date2
 
-  date
+  date +%m.%d.%H.%M
 endif
