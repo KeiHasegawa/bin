@@ -1,6 +1,6 @@
 #! /bin/tcsh -f
 
-d:/tmp/mywdog.ms64 $argv[1] | \
+mywdog.ms64 $argv[1] | \
 sed -e '/3_Real_floating_and_integer\/1_ok:.\/test00[012].exe/d' \
     -e '/16_Assignment_operators\/1_ok:.\/test00[03].exe/d' \
     -e '/5_Declarations\/4_Function_specifiers\/4_error:diff test/d'
