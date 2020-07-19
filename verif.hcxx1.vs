@@ -21,6 +21,7 @@ else
   endif
 endif
 
+find . -name \*.common -exec overwrite {} \;
 find . -name \*.$bit -exec overwrite {} \;
 find . -name '*.vs' -exec overwrite {} \;
 find . -name '*.cxx1' -exec overwrite {} \;

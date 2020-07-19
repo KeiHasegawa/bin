@@ -17,6 +17,7 @@ if ( $status != 0 ) then
   exit 1
 endif
 
+find . -name \*.common -exec overwrite {} \;
 find . -name \*.$bit -exec overwrite {} \;
 find . -name \*.$plat -exec overwrite {} \;
 find . -name '*.cxx1' -exec overwrite {} \;
