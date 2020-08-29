@@ -61,11 +61,11 @@ if ($VERIF_REQUIRE_CLEAN == 1) then
 endif
 
 if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsimxx.dll) then
-make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/9.3.0/include -D__cplusplus -D_WCHAR_T_DEFINED -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' 'EXTRA_CPP_FLAG_TACSIM_VS=-D__cplusplus -D_WCHAR_T_DEFINED -DUSE_BUILTIN_VA_ARG'
-else
-if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chkxx.dll) then
+make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG_TACSIM_VS=-D__cplusplus -D_WCHAR_T_DEFINED -DUSE_BUILTIN_VA_ARG'
+else if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chkxx.dll) then
 make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/9.3.0/include -D__cplusplus -D_WCHAR_T_DEFINED -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"'
+else if ($INTEL_DLL_MS_MODE == 1) then
+make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-D_WCHAR_T_DEFINED' "CC1_FLAG=--generator-option \( --debug $extra_option \)" 'LINK=vs_wrapperxx' 'LINK2=vs_wrapper2xx'
 else
 make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/9.3.0/include -D__cplusplus -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' "CC1_FLAG=--generator-option \( --debug $extra_option \)"
-endif
 endif
