@@ -23,6 +23,9 @@ while ( <> ) {
 	}
 	next;
     }
-    
+    s/#pragma.*extern/extern/;
+    s/#pragma.*template/template/;
+    s/#pragma.*}/}/;
+    s/__countof_helper\( __unaligned  _CountofType/__countof_helper\(  _CountofType/;
     print $_, "\n";
 }
