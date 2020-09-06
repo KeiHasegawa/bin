@@ -24,7 +24,6 @@ endif
 find . -name \*.common -exec overwrite {} \;
 find . -name \*.$bit -exec overwrite {} \;
 find . -name '*.vs' -exec overwrite {} \;
-find . -name '*.cc1' -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;
 if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsim.dll) then
   find . -name '*.tacsim' -exec overwrite {} \;
@@ -41,6 +40,7 @@ endif
 if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chk.dll) then
   find . -name '*.chk' -exec overwrite {} \;
 endif
+find . -name '*.cc1' -exec overwrite {} \;
 
 if ( $bit == "32" && $CC1GENERATOR == $LANG_PROJECT_ROOT/bin/intel.dll ) then
   if ($INTEL_DLL_MS_MODE == 0) then

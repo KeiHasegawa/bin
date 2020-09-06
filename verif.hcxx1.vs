@@ -24,7 +24,6 @@ endif
 find . -name \*.common -exec overwrite {} \;
 find . -name \*.$bit -exec overwrite {} \;
 find . -name '*.vs' -exec overwrite {} \;
-find . -name '*.cxx1' -exec overwrite {} \;
 find . -name '*.conly' -exec takeoff {} \;
 if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsimxx.dll) then
   find . -name '*.tacsim' -exec overwrite {} \;
@@ -41,6 +40,7 @@ endif
 if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chkxx.dll) then
   find . -name '*.chk' -exec overwrite {} \;
 endif
+find . -name '*.cxx1' -exec overwrite {} \;
 
 if ( $bit == "32" && $CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/intelxx.dll ) then
   if ($INTEL_DLL_MS_MODE == 0) then
@@ -66,7 +66,7 @@ make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EX
 else if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chkxx.dll) then
 make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/9.3.0/include -D__cplusplus -D_WCHAR_T_DEFINED -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"'
 else if ($INTEL_DLL_MS_MODE == 1) then
-make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-D__cplusplus -D_WCHAR_T_DEFINED -DUSE_BUILTIN_VA_ARG -D__nullptr=\(void*\)0' "CC1_FLAG=--generator-option \( --debug $extra_option \)" 'LINK_CMD=vs_wrapperxx' 'LINK2=vs_wrapper2xx'
+make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-D__cplusplus -D_WCHAR_T_DEFINED -DUSE_BUILTIN_VA_ARG -D__nullptr=\(void*\)0' "CC1_FLAG=--generator-option \( --debug $extra_option \)" 'LINK_CMD=vs_wrapperxx' 'LINK2=vs_wrapper2xx' 'LINK_CMD2=vs_wrapper3xx'
 else
 make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/9.3.0/include -D__cplusplus -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' "CC1_FLAG=--generator-option \( --debug $extra_option \)"
 endif
