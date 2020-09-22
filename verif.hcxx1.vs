@@ -42,6 +42,13 @@ if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chkxx.dll) then
 endif
 find . -name '*.cxx1' -exec overwrite {} \;
 
+if ($cwd:t == 46_optimization) then
+  if (x$INTEL_DLL_EXTRA_OPTION == x"--x86") then
+    cp test019.lof.cxx1.ms86 test019.lof
+  endif
+endif
+
+
 if ( $bit == "32" && $CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/intelxx.dll ) then
   if ($INTEL_DLL_MS_MODE == 0) then
     set extra_option = "--x86"
