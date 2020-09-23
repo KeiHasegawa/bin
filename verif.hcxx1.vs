@@ -50,7 +50,6 @@ if ($cwd:t == 46_optimization) then
   endif
 endif
 
-
 if ( $bit == "32" && $CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/intelxx.dll ) then
   if ($INTEL_DLL_MS_MODE == 0) then
     set extra_option = "--x86"
