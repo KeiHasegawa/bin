@@ -43,11 +43,13 @@ endif
 find . -name '*.cc1' -exec overwrite {} \;
 
 if ($cwd:t == 46_optimization) then
-  if (x$INTEL_DLL_EXTRA_OPTION == x"--x86") then
-    cp test019.lof.cc1.ms86 test019.lof
-  else
-    cp test019.lof.cc1.ms64 test019.lof
-  endif
+  if ($INTEL_DLL_MS_MODE == 1) then
+    if (x$INTEL_DLL_EXTRA_OPTION == x"--x86") then
+      cp test019.lof.cc1.ms86 test019.lof
+    else
+      cp test019.lof.cc1.ms64 test019.lof
+    endif
+  endif  
 endif
 
 if ( $bit == "32" && $CC1GENERATOR == $LANG_PROJECT_ROOT/bin/intel.dll ) then
