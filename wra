@@ -1,22 +1,58 @@
 #! /bin/csh -vxf
 
+# 1
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll
+wrapper.vs
+ 
+exit
+
+# 1
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll
+wrapper.vs
+
+# 2
 setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll
 setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll
 wrapper.gxx
 
-exit
+# 3
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/printf_chk.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/printf_chkxx.dll
+wrapper.vs
 
-setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.vs
-setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/tacsim.dll ;     wrapper.vs
-setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/printf_chk.dll ; wrapper.vs
-setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.vs  --ms
-setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.vs  --ms86
+# 4
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/printf_chk.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/printf_chkxx.dll
+wrapper.gxx
 
-setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.gxx
-setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/tacsim.dll ;     wrapper.gxx
-setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/printf_chk.dll ; wrapper.gxx
-setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.gxx --ms
-setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll  ;     wrapper.gxx --ms86
+# 5
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/tacsim.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/tacsimxx.dll
+wrapper.vs
 
-setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll  ;  wrapper.vs
-setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll  ;  wrapper.gxx
+# 6
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/tacsim.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/tacsimxx.dll
+wrapper.gxx
+
+# 7
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll
+wrapper.vs --ms
+
+# 8
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll
+wrapper.gxx --ms
+
+# 9
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll
+wrapper.vs --ms86
+
+# 10
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll
+wrapper.gxx --ms86

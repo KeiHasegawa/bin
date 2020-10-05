@@ -1,4 +1,4 @@
-#! /bin/csh -f
+#! /bin/csh -vxf
 
 setenv VERIF_REQUIRE_CLEAN 1
 
@@ -43,10 +43,12 @@ endif
 find . -name '*.cxx1' -exec overwrite {} \;
 
 if ($cwd:t == 46_optimization) then
-  if (x$INTEL_DLL_EXTRA_OPTION == x"--x86") then
-    cp test019.lof.cxx1.ms86 test019.lof
-  else
-    cp test019.lof.cxx1.ms64 test019.lof
+  if ($INTEL_DLL_MS_MODE == 1) then
+    if (x$INTEL_DLL_EXTRA_OPTION == x"--x86") then
+      cp test019.lof.cxx1.ms86 test019.lof
+    else
+      cp test019.lof.cxx1.ms64 test019.lof
+    endif
   endif
 endif
 

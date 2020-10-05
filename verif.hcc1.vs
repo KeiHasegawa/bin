@@ -49,7 +49,7 @@ if ($cwd:t == 46_optimization) then
     else
       cp test019.lof.cc1.ms64 test019.lof
     endif
-  endif  
+  endif
 endif
 
 if ( $bit == "32" && $CC1GENERATOR == $LANG_PROJECT_ROOT/bin/intel.dll ) then
