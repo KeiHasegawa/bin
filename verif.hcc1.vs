@@ -37,10 +37,10 @@ else
     endif
   endif
 endif
+find . -name '*.cc1' -exec overwrite {} \;
 if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chk.dll) then
   find . -name '*.chk' -exec overwrite {} \;
 endif
-find . -name '*.cc1' -exec overwrite {} \;
 
 if ($cwd:t == 46_optimization) then
   if ($INTEL_DLL_MS_MODE == 1) then
