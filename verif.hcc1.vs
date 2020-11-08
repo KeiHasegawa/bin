@@ -25,21 +25,21 @@ find . -name \*.common -exec overwrite {} \;
 find . -name \*.$bit -exec overwrite {} \;
 find . -name '*.vs' -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;
-if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsim.dll) then
-  find . -name '*.tacsim' -exec overwrite {} \;
+if ($INTEL_DLL_MS_MODE == 0) then
+  find . -name '*.normal' -exec overwrite {} \;
 else
-  if ($INTEL_DLL_MS_MODE == 0) then
-    find . -name '*.normal' -exec overwrite {} \;
-  else
-    find . -name '*.ms' -exec overwrite {} \;
-    if ($bit == "32") then
-      find . -name '*.ms86' -exec overwrite {} \;
-    endif
+  find . -name '*.ms' -exec overwrite {} \;
+  if ($bit == "32") then
+    find . -name '*.ms86' -exec overwrite {} \;
   endif
 endif
+
 find . -name '*.cc1' -exec overwrite {} \;
 if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chk.dll) then
   find . -name '*.chk' -exec overwrite {} \;
+endif
+if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsim.dll) then
+  find . -name '*.tacsim' -exec overwrite {} \;
 endif
 
 if ($cwd:t == 46_optimization) then
