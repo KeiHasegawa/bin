@@ -35,8 +35,8 @@ install.plathome
 install.sizeoflongx8
 
 unsetenv BATCH_BUILD_VS_CLEAN
-setenv BATCH_BUILD_VS_CONFIGURATION Debug
-setenv BATCH_BUILD_VS_X86 0
+setenv BATCH_BUILD_VS_CONFIGURATION Release
+setenv BATCH_BUILD_VS_X86 1
 
 if ($?BATCH_BUILD_VS_X86 == 0) then
   setenv BATCH_BUILD_VS_X86 0
@@ -55,6 +55,8 @@ if ( $status != 0 ) then
 endif
 
 cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899/6_Language
+rm -f 2_Conversions/40_ulonglong/test064.lof.tacsim
+rm -f 2_Conversions/40_ulonglong/test065.lof.tacsim
 if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/intel.dll && $INTEL_DLL_MS_MODE == 0 || $CC1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chk.dll) then
   cp 1_Lexical_elements/3_Constants/1_Floating_constants/1_ok/test003.c{.intel,}
   cp 2_Conversions/1_Arithmetic_operands/4_Real_floating_types/1_ok/test001.c{.intel,}

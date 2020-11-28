@@ -6,8 +6,8 @@ date
 
 setenv INTEL_DLL_MS_MODE 0
 setenv INTEL_DLL_EXTRA_OPTION
-setenv DO_HCC1_TEST 0
-setenv DO_HCXX1_TEST 1
+setenv DO_HCC1_TEST 1
+setenv DO_HCXX1_TEST 0
 setenv DO_HCXX1_C_TEST 1
 
 if ($#argv == 1) then
@@ -53,6 +53,8 @@ if ($INTEL_DLL_MS_MODE == 1) then
 endif
 
 cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899/6_Language
+rm -f 2_Conversions/40_ulonglong/test064.lof.tacsim
+rm -f 2_Conversions/40_ulonglong/test065.lof.tacsim
 if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/intel.dll && $INTEL_DLL_MS_MODE == 0 || $CC1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chk.dll ) then
   cp 1_Lexical_elements/3_Constants/1_Floating_constants/1_ok/test003.c{.intel,}
   cp 2_Conversions/1_Arithmetic_operands/4_Real_floating_types/1_ok/test001.c{.intel,}
