@@ -22,20 +22,20 @@ find . -name \*.$bit -exec overwrite {} \;
 find . -name \*.$plat -exec overwrite {} \;
 find . -name '*.cc1' -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;
-if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsim.dll) then
-  find . -name '*.tacsim' -exec overwrite {} \;
+if ($INTEL_DLL_MS_MODE == 0) then
+  find . -name '*.normal' -exec overwrite {} \;
 else
-  if ($INTEL_DLL_MS_MODE == 0) then
-    find . -name '*.normal' -exec overwrite {} \;
-  else
-    find . -name '*.ms' -exec overwrite {} \;
-    if (x$INTEL_DLL_EXTRA_OPTION == x"--x86") then
-      find . -name '*.ms86' -exec overwrite {} \;
-    endif
+  find . -name '*.ms' -exec overwrite {} \;
+  if (x$INTEL_DLL_EXTRA_OPTION == x"--x86") then
+    find . -name '*.ms86' -exec overwrite {} \;
   endif
 endif
+
 if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chk.dll) then
   find . -name '*.chk' -exec overwrite {} \;
+endif
+if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsim.dll) then
+  find . -name '*.tacsim' -exec overwrite {} \;
 endif
 
 if ( $bit == "32" && $CC1GENERATOR == $LANG_PROJECT_ROOT/bin/intel.dll ) then
@@ -64,7 +64,7 @@ if ($CC1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsim.dll || $CC1GENERATOR == $LANG
   endif  
 else if ($INTEL_DLL_MS_MODE == 1) then
 # See work around of wrapper.gxx
-make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/9.3.0/include -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' "CC1_FLAG=--generator-option \( --debug $extra_option \)"
+make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'EXTRA_CPP_FLAG=' "CC1_FLAG=--generator-option \( --debug $extra_option \)"
 else
   if ($plat == "cygwin" ) then
     make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EXTRA_CPP_FLAG=-I/usr/include -I/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/include -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' "CC1_FLAG=--generator-option \( --debug $extra_option \)"
