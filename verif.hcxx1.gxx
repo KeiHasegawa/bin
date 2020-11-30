@@ -38,6 +38,16 @@ if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsimxx.dll) then
   find . -name '*.tacsim' -exec overwrite {} \;
 endif
 
+if ($cwd:t == 46_optimization) then
+  if ($INTEL_DLL_MS_MODE == 1) then
+    if (x$INTEL_DLL_EXTRA_OPTION == x"--x86") then
+      cp test019.lof.cxx1.ms86 test019.lof
+    else
+      cp test019.lof.cxx1.ms64 test019.lof
+    endif
+  endif
+endif
+
 if ( $bit == "32" && $CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/intelxx.dll ) then
   if ($INTEL_DLL_MS_MODE == 0) then
     set extra_option = "--x86"
