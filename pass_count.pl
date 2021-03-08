@@ -28,6 +28,9 @@ while ( <> ){
 	elsif ( /hcxx1.exe/ ){
 	    ++$hcxx1;
 	}
+        elsif ( /hcpp.exe/ ){
+            ++$hcpp;
+	}
 	elsif ( /gcc/ || /g\+\+/ ){
 	    ++$gcc;
 	}
@@ -38,7 +41,7 @@ while ( <> ){
     ++$pass if ( /^touch .*\.s/ );  # for printf_chk.dll
 }
 
-$fail = $diff + $kill + $hcc1 + $hcxx1 + $gcc + $other;
+$fail = $diff + $kill + $hcc1 + $hcxx1 + $hcpp + $gcc + $other;
 
 print "pass = ", $pass,"\n";
 print "fail = ", $fail,"\n";
@@ -47,6 +50,7 @@ print "  diff = ", $diff,"\n";
 print "  kill = ", $kill,"\n";
 print "  hcc1 = ", $hcc1,"\n";
 print "  hcxx1= ", $hcxx1,"\n";
+print "  hcpp = ", $hcpp,"\n";
 print "  gcc  = ", $gcc,"\n";
 print "  other= ", $other,"\n";
 }
