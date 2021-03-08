@@ -5,6 +5,7 @@ $diff = 0;
 $kill = 0;
 $hcc1 = 0;
 $hcxx1 = 0;
+$hcpp = 0;
 $gcc = 0;
 $other = 0;
 
