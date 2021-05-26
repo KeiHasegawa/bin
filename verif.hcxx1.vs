@@ -71,12 +71,18 @@ if ($VERIF_REQUIRE_CLEAN == 1) then
 endif
 
 if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsimxx.dll) then
-make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG_TACSIM_VS=-D__cplusplus -D_WCHAR_T_DEFINED -DUSE_BUILTIN_VA_ARG -D__nullptr=\(void*\)0' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/9.3.0/include -D__cplusplus -D_WCHAR_T_DEFINED -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"'
+rm -f $LANG_PROJECT_ROOT/43_ISO_IEC_14882/12_Special_member_functions/0_Special_member_functions/test050.cpp
+else
+cp $LANG_PROJECT_ROOT/43_ISO_IEC_14882/12_Special_member_functions/0_Special_member_functions/test050.cpp{.notacsim,}
+endif
+
+if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/tacsimxx.dll) then
+make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG_TACSIM_VS=-D__cplusplus -D_WCHAR_T_DEFINED -DUSE_BUILTIN_VA_ARG -D__nullptr=\(void*\)0' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/usr/local/lib/gcc/x86_64-pc-cygwin/10.1.0/include -D__cplusplus -D_WCHAR_T_DEFINED -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"'
 # Note that `$EXTRA_CPP_FLAG' is used at error test
 else if ($CXX1GENERATOR == $LANG_PROJECT_ROOT/bin/printf_chkxx.dll) then
-make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/9.3.0/include -D__cplusplus -D_WCHAR_T_DEFINED -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"'
+make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/usr/local/lib/gcc/x86_64-pc-cygwin/10.1.0/include -D__cplusplus -D_WCHAR_T_DEFINED -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"'
 else if ($INTEL_DLL_MS_MODE == 1) then
 make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-D__cplusplus -D_WCHAR_T_DEFINED -DUSE_BUILTIN_VA_ARG -D__nullptr=\(void*\)0' "CC1_FLAG=--generator-option \( --debug $extra_option \)" 'LINK_CMD=vs_wrapperxx' 'LINK2=vs_wrapper2xx' 'LINK_CMD2=vs_wrapper3xx'
 else
-make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/lib/gcc/x86_64-pc-cygwin/9.3.0/include -D__cplusplus -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' "CC1_FLAG=--generator-option \( --debug $extra_option \)"
+make -k 'MY_MAKEFLAGS=-k' 'DOS2UNIX=unix2dos' 'EUC2SJIS=cat' 'CC1=hcxx1.exe' 'EXTRA_CPP_FLAG=-Id:/cygwin64/usr/include -Id:/cygwin64/usr/local/lib/gcc/x86_64-pc-cygwin/10.1.0/include -D__cplusplus -D__x86_64__ -D__CYGWIN__ -D__WCHAR_TYPE__="unsigned short int"' "CC1_FLAG=--generator-option \( --debug $extra_option \)"
 endif
