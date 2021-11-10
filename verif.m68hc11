@@ -1,15 +1,10 @@
 #! /bin/csh -f
 
-setenv VERIF_REQUIRE_CLEAN 1
-
 find . -name \*.gcc -exec overwrite {} \;
 find . -name \*.char_is_uchar -exec overwrite {} \;
 find . -name \*.m68hc11 -exec overwrite {} \;
 
 cp Makefile.ok.m68hc11.mlong Makefile.ok
 
-if ($VERIF_REQUIRE_CLEAN == 1) then
-  make clean
-endif
-
+make clean
 make -k 'MY_MAKEFLAGS=-k'
