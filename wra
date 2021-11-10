@@ -1,10 +1,10 @@
 #! /bin/csh -vxf
 
-# 1
-setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll
-setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll
-wrapper.vs
- 
+# 6
+setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/tacsim.dll
+setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/tacsimxx.dll
+wrapper.gxx
+
 exit
 
 # 1
