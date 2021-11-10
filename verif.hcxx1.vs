@@ -24,6 +24,8 @@ endif
 find . -name \*.common -exec overwrite {} \;
 find . -name \*.$bit -exec overwrite {} \;
 find . -name '*.vs' -exec overwrite {} \;
+find . -name '*.char_is_schar' -exec overwrite {} \;
+find . -name '*.hcc1' -exec overwrite {} \;
 find . -name '*.conly' -exec takeoff {} \;
 if ($INTEL_DLL_MS_MODE == 0) then
   find . -name '*.normal' -exec overwrite {} \;
