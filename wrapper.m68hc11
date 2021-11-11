@@ -11,6 +11,8 @@ cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899
 rm -f 6_Language/1_Lexical_elements/2_Identifiers/6_Compatible_type_and_composite_type/2_error/test000.c
 verif.m68hc11 >& /tmp/41_ISO_IEC_9899.log.gxx.$date1
 pass_count.pl /tmp/41_ISO_IEC_9899.log.gxx.$date1
+m68hc11_filter_known_bug.pl /tmp/41_ISO_IEC_9899.log.gxx.$date1 > /tmp/41_ISO_IEC_9899.log.gxx.$date1.filtered
+echo /tmp/41_ISO_IEC_9899.log.gxx.$date1.filtered
 
 exit
 
