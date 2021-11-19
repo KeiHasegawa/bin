@@ -4,8 +4,8 @@ find . -name '*.hcc1_only' -exec takeoff {} \;
 find . -name '*.intel' -exec takeoff {} \;
 find . -name '*.enough_memory' -exec takeoff {} \;
 find . -name \*.gcc -exec overwrite {} \;
-find . -name \*.mshort -exec overwrite {} \;
-find . -name \*.char_is_uchar -exec overwrite {} \;
+find . -name \*.INT_TYPE_SIZE_32 -exec overwrite {} \;
+find . -name \*.DEFAULT_SIGNED_CHAR_0 -exec overwrite {} \;
 find . -name \*.iq2000 -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;
 

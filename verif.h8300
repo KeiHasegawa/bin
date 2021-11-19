@@ -5,8 +5,8 @@ find . -name '*.intel' -exec takeoff {} \;
 find . -name '*.enough_memory' -exec takeoff {} \;
 find . -name \*.wchar_is_ushort -exec overwrite {} \;
 find . -name \*.gcc -exec overwrite {} \;
-find . -name \*.mshort -exec overwrite {} \;
-find . -name \*.char_is_uchar -exec overwrite {} \;
+find . -name \*.INT_TYPE_SIZE_16 -exec overwrite {} \;
+find . -name \*.DEFAULT_SIGNED_CHAR_0 -exec overwrite {} \;
 find . -name \*.h8300 -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;
 

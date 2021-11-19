@@ -6,8 +6,8 @@ find . -name '*.enough_memory' -exec takeoff {} \;
 find . -name \*.wchar_is_int -exec overwrite {} \;
 find . -name \*.32 -exec overwrite {} \;
 find . -name \*.gcc -exec overwrite {} \;
-find . -name \*.mlong -exec overwrite {} \;
-find . -name \*.char_is_uchar -exec overwrite {} \;
+find . -name \*.INT_TYPE_SIZE_32 -exec overwrite {} \;
+find . -name \*.DEFAULT_SIGNED_CHAR_0 -exec overwrite {} \;
 find . -name \*.arm -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;
 
