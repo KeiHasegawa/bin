@@ -3,6 +3,8 @@
 find . -name '*.hcc1_only' -exec takeoff {} \;
 find . -name '*.intel' -exec takeoff {} \;
 find . -name '*.enough_memory' -exec takeoff {} \;
+find . -name \*.WCHAR_TYPE_long -exec overwrite {} \;
+find . -name \*.POINTER_SIZE_32 -exec overwrite {} \;
 find . -name \*.gcc -exec overwrite {} \;
 find . -name \*.INT_TYPE_SIZE_16 -exec overwrite {} \;
 find . -name \*.DEFAULT_SIGNED_CHAR_0 -exec overwrite {} \;

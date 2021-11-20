@@ -5,7 +5,9 @@ find . -name '*.intel' -exec takeoff {} \;
 find . -name '*.enough_memory' -exec takeoff {} \;
 find . -name \*.gcc -exec overwrite {} \;
 find . -name '*.INT_TYPE_SIZE_32' -exec overwrite {} \;
+find . -name '*.POINTER_SIZE_16' -exec overwrite {} \;
 find . -name \*.DEFAULT_SIGNED_CHAR_0 -exec overwrite {} \;
+find . -name \*.WCHAR_TYPE_short -exec overwrite {} \;
 find . -name \*.m68hc11 -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;
 
