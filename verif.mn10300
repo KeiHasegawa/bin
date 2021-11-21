@@ -6,6 +6,7 @@ find . -name '*.enough_memory' -exec takeoff {} \;
 find . -name \*.gcc -exec overwrite {} \;
 find . -name \*.INT_TYPE_SIZE_32 -exec overwrite {} \;
 find . -name \*.POINTER_SIZE_32 -exec overwrite {} \;
+find . -name \*.POINTERS_EXTEND_UNSIGNED_0 -exec overwrite {} \;
 find . -name \*.DEFAULT_SIGNED_CHAR_0 -exec overwrite {} \;
 find . -name \*.WCHAR_TYPE_long -exec overwrite {} \;
 find . -name \*.mn10300 -exec overwrite {} \;
