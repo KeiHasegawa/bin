@@ -5,10 +5,13 @@ find . -name '*.intel' -exec takeoff {} \;
 find . -name '*.enough_memory' -exec takeoff {} \;
 find . -name \*.gcc -exec overwrite {} \;
 find . -name '*.INT_TYPE_SIZE_32' -exec overwrite {} \;
+find . -name \*.LONG_TYPE_SIZE_32 -exec overwrite {} \;
 find . -name '*.POINTER_SIZE_16' -exec overwrite {} \;
 find . -name \*.POINTERS_EXTEND_UNSIGNED_0 -exec overwrite {} \;
 find . -name \*.DEFAULT_SIGNED_CHAR_0 -exec overwrite {} \;
 find . -name \*.WCHAR_TYPE_short -exec overwrite {} \;
+find . -name \*.DOUBLE_TYPE_SIZE_64 -exec overwrite {} \;
+find . -name \*.LONG_DOUBLE_TYPE_SIZE_64 -exec overwrite {} \;
 find . -name \*.m68hc11 -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;
 
@@ -16,22 +19,6 @@ if ($cwd == $LANG_PROJECT_ROOT/41_ISO_IEC_9899) then
   rm -f 6_Language/1_Lexical_elements/2_Identifiers/0_Identifiers/1_ok/test009.c
   rm -f 6_Language/1_Lexical_elements/2_Identifiers/6_Compatible_type_and_composite_type/2_error/test000.c
   rm -f 6_Language/1_Lexical_elements/3_Constants/1_Floating_constants/1_ok/test003.c
-endif
-
-if (-f Makefile.ok.m68hc11.mlong) then
-  cp Makefile.ok.m68hc11.mlong Makefile.ok
-endif  
-if (-f Makefile.error.m68hc11) then
-  cp Makefile.error.m68hc11 Makefile.error
-endif
-if (-f Makefile.ok2.m68hc11.mlong) then
-  cp Makefile.ok2.m68hc11.mlong Makefile.ok2
-endif
-if (-f Makefile.error2.m68hc1) then
-  cp Makefile.error2.m68hc11 Makefile.error2
-endif
-if (-f Makefile.m68hc11.mlong) then
-  cp Makefile.m68hc11.mlong Makefile
 endif
 
 make clean
