@@ -10,6 +10,7 @@ find . -name \*.POINTERS_EXTEND_UNSIGNED_0 -exec overwrite {} \;
 find . -name \*.PTRDIFF_TYPE_int -exec overwrite {} \;
 find . -name \*.DEFAULT_SIGNED_CHAR_0 -exec overwrite {} \;
 find . -name \*.WCHAR_TYPE_int -exec overwrite {} \;
+find . -name \*.WCHAR_TYPE_SIZE_32 -exec overwrite {} \;
 find . -name \*.DOUBLE_TYPE_SIZE_64 -exec overwrite {} \;
 find . -name \*.LONG_DOUBLE_TYPE_SIZE_64 -exec overwrite {} \;
 find . -name \*.gcc -exec overwrite {} \;
