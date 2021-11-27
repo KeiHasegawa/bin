@@ -22,7 +22,6 @@ else
 endif
 
 find . -name \*.common -exec overwrite {} \;
-find . -name '*.vs' -exec overwrite {} \;
 find . -name '*.INT_TYPE_SIZE_32' -exec overwrite {} \;
 find . -name \*.POINTER_SIZE_$bit -exec overwrite {} \;
 find . -name '*.DEFAULT_SIGNED_CHAR_1' -exec overwrite {} \;
@@ -30,6 +29,7 @@ find . -name '*.hcc1_only' -exec overwrite {} \;
 find . -name '*.enough_memory' -exec overwrite {} \;
 find . -name '*.hcc1' -exec overwrite {} \;
 find . -name '*.intel' -exec overwrite {} \;
+find . -name '*.vs' -exec overwrite {} \;
 find . -name '*.conly' -exec takeoff {} \;
 if ($INTEL_DLL_MS_MODE == 0) then
   find . -name '*.normal' -exec overwrite {} \;
