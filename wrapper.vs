@@ -6,8 +6,8 @@ date
 
 setenv INTEL_DLL_MS_MODE 0
 setenv INTEL_DLL_EXTRA_OPTION
-setenv DO_HCC1_TEST 1
-setenv DO_HCXX1_TEST 0
+setenv DO_HCC1_TEST 0
+setenv DO_HCXX1_TEST 1
 setenv DO_HCXX1_C_TEST 1
     
 if ($#argv == 1) then
@@ -35,7 +35,7 @@ install.plathome
 install.sizeoflongx8
 
 unsetenv BATCH_BUILD_VS_CLEAN
-#setenv BATCH_BUILD_VS_CONFIGURATION Release
+setenv BATCH_BUILD_VS_CONFIGURATION Release
 setenv BATCH_BUILD_VS_X86 1
 
 if ($?BATCH_BUILD_VS_X86 == 0) then
