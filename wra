@@ -1,9 +1,9 @@
 #! /bin/csh -vxf
 
-# 2
+# 1
 setenv CC1GENERATOR $LANG_PROJECT_ROOT/bin/intel.dll
 setenv CXX1GENERATOR $LANG_PROJECT_ROOT/bin/intelxx.dll
-wrapper.gxx
+wrapper.vs
 
 exit
 
