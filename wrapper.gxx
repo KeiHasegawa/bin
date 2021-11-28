@@ -107,4 +107,3 @@ if ($DO_HCXX1_TEST == 1) then
 
   date +%m.%d.%H.%M
 endif
-
