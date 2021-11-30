@@ -8,25 +8,27 @@ set date1 = `date +%m.%d.%H.%M`
 echo $date1
 
 cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899
-verif.h8300 >& /tmp/41_ISO_IEC_9899.log.gxx.$date1
-pass_count.pl /tmp/41_ISO_IEC_9899.log.gxx.$date1
+verif.h8300 >& ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
+pass_count.pl ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
 filter.pl h8300_known_bug gcc_known_bug > h8300_known_bug.filter
-sh h8300_known_bug.filter /tmp/41_ISO_IEC_9899.log.gxx.$date1 > /tmp/41_ISO_IEC_9899.log.gxx.$date1.filtered
-echo /tmp/41_ISO_IEC_9899.log.gxx.$date1.filtered
+sh h8300_known_bug.filter ~/garbage/41_ISO_IEC_9899.log.gxx.$date1 > ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
+echo ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
+
+exit
 
 cd $LANG_PROJECT_ROOT/42_C2nd
-verif.h8300 >& /tmp/42_C2nd.log.gxx.$date1
-pass_count.pl /tmp/42_C2nd.log.gxx.$date1
+verif.h8300 >& ~/garbage/42_C2nd.log.gxx.$date1
+pass_count.pl ~/garbage/42_C2nd.log.gxx.$date1
 
 set date2 = `date +%m.%d.%H.%M`
 echo $date2
 
 cd $LANG_PROJECT_ROOT/43_ISO_IEC_14882
-verif.h8300 >& /tmp/43_ISO_IEC_14882.log.gxx.$date2
-pass_count.pl /tmp/43_ISO_IEC_14882.log.gxx.$date2
+verif.h8300 >& ~/garbage/43_ISO_IEC_14882.log.gxx.$date2
+pass_count.pl ~/garbage/43_ISO_IEC_14882.log.gxx.$date2
 filter.pl h8300_known_bug gcc_known_bug > h8300_known_bug.filter
-sh h8300_known_bug.filter /tmp/43_ISO_IEC_14882.log.gxx.$date2 > /tmp/43_ISO_IEC_14882.log.gxx.$date2.filtered
-echo /tmp/43_ISO_IEC_14882.log.gxx.$date2.filtered
+sh h8300_known_bug.filter ~/garbage/43_ISO_IEC_14882.log.gxx.$date2 > ~/garbage/43_ISO_IEC_14882.log.gxx.$date2.filtered
+echo ~/garbage/43_ISO_IEC_14882.log.gxx.$date2.filtered
 
 date +%m.%d.%H.%M
 
