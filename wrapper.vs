@@ -72,16 +72,16 @@ echo $date1
 
 if ($DO_HCC1_TEST == 1) then
   cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899
-  verif.hcc1.vs >& /tmp/41_ISO_IEC_9899.log.vs.$date1
-  pass_count.pl /tmp/41_ISO_IEC_9899.log.vs.$date1
+  verif.hcc1.vs >& ~/garbage/41_ISO_IEC_9899.log.vs.$date1
+  pass_count.pl ~/garbage/41_ISO_IEC_9899.log.vs.$date1
 
   cd $LANG_PROJECT_ROOT/42_C2nd
-  verif.hcc1.vs >& /tmp/42_C2nd.log.vs.$date1
-  pass_count.pl /tmp/42_C2nd.log.vs.$date1
+  verif.hcc1.vs >& ~/garbage/42_C2nd.log.vs.$date1
+  pass_count.pl ~/garbage/42_C2nd.log.vs.$date1
 
   cd $LANG_PROJECT_ROOT/46_optimization
-  verif.hcc1.vs >& /tmp/46_optimization.log.vs.$date1
-  pass_count.pl /tmp/46_optimization.log.vs.$date1
+  verif.hcc1.vs >& ~/garbage/46_optimization.log.vs.$date1
+  pass_count.pl ~/garbage/46_optimization.log.vs.$date1
 
   date +%m.%d.%H.%M
 endif  
@@ -92,20 +92,20 @@ echo $date2
 if ($DO_HCXX1_TEST == 1) then
   if ($DO_HCXX1_C_TEST == 1) then
     cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899
-    verif.hcxx1.vs >& /tmp/41_ISO_IEC_9899xx.log.vs.$date2
-    pass_count.pl /tmp/41_ISO_IEC_9899xx.log.vs.$date2
+    verif.hcxx1.vs >& ~/garbage/41_ISO_IEC_9899xx.log.vs.$date2
+    pass_count.pl ~/garbage/41_ISO_IEC_9899xx.log.vs.$date2
 
     cd $LANG_PROJECT_ROOT/42_C2nd
-    verif.hcxx1.vs >& /tmp/42_C2ndxx.log.vs.$date2
-    pass_count.pl /tmp/42_C2ndxx.log.vs.$date2
+    verif.hcxx1.vs >& ~/garbage/42_C2ndxx.log.vs.$date2
+    pass_count.pl ~/garbage/42_C2ndxx.log.vs.$date2
 
     cd $LANG_PROJECT_ROOT/46_optimization
-    verif.hcxx1.vs >& /tmp/46_optimizationxx.log.vs.$date2
-    pass_count.pl /tmp/46_optimizationxx.log.vs.$date2
+    verif.hcxx1.vs >& ~/garbage/46_optimizationxx.log.vs.$date2
+    pass_count.pl ~/garbage/46_optimizationxx.log.vs.$date2
   endif
   cd $LANG_PROJECT_ROOT/43_ISO_IEC_14882
-  verif.hcxx1.vs >& /tmp/43_ISO_IEC_14882.log.vs.$date2
-  pass_count.pl /tmp/43_ISO_IEC_14882.log.vs.$date2
+  verif.hcxx1.vs >& ~/garbage/43_ISO_IEC_14882.log.vs.$date2
+  pass_count.pl ~/garbage/43_ISO_IEC_14882.log.vs.$date2
 
   date +%m.%d.%H.%M
 endif

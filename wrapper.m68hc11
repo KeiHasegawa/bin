@@ -9,24 +9,24 @@ echo $date1
 
 cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899
 rm -f 6_Language/1_Lexical_elements/2_Identifiers/6_Compatible_type_and_composite_type/2_error/test000.c
-verif.m68hc11 >& /tmp/41_ISO_IEC_9899.log.gxx.$date1
-pass_count.pl /tmp/41_ISO_IEC_9899.log.gxx.$date1
+verif.m68hc11 >& ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
+pass_count.pl ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
 filter.pl m68hc11_known_bug gcc_known_bug > m68hc11_known_bug.filter
-sh m68hc11_known_bug.filter /tmp/41_ISO_IEC_9899.log.gxx.$date1 > /tmp/41_ISO_IEC_9899.log.gxx.$date1.filtered
-echo /tmp/41_ISO_IEC_9899.log.gxx.$date1.filtered
+sh m68hc11_known_bug.filter ~/garbage/41_ISO_IEC_9899.log.gxx.$date1 > ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
+echo ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
 
 exit
 
 cd $LANG_PROJECT_ROOT/42_C2nd
-verif.m68hc11 >& /tmp/42_C2nd.log.gxx.$date1
-pass_count.pl /tmp/42_C2nd.log.gxx.$date1
+verif.m68hc11 >& ~/garbage/42_C2nd.log.gxx.$date1
+pass_count.pl ~/garbage/42_C2nd.log.gxx.$date1
 
 set date2 = `date +%m.%d.%H.%M`
 echo $date2
 
 cd $LANG_PROJECT_ROOT/43_ISO_IEC_14882
-verif.m68hc11 >& /tmp/43_ISO_IEC_14882.log.gxx.$date2
-pass_count.pl /tmp/43_ISO_IEC_14882.log.gxx.$date2
+verif.m68hc11 >& ~/garbage/43_ISO_IEC_14882.log.gxx.$date2
+pass_count.pl ~/garbage/43_ISO_IEC_14882.log.gxx.$date2
 
 date +%m.%d.%H.%M
 
