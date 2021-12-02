@@ -27,6 +27,7 @@ find . -name '*.LONG_DOUBLE_TYPE_SIZE_80' -exec overwrite {} \;
 find . -name \*.$plat -exec overwrite {} \;
 find . -name '*.hcc1_only' -exec overwrite {} \;
 find . -name '*.enough_memory' -exec overwrite {} \;
+find . -name \*.MORE_THAN_64K -exec overwrite {} \;
 find . -name '*.hcc1' -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;
 

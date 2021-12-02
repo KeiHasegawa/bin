@@ -12,6 +12,7 @@ find . -name \*.WCHAR_TYPE_long -exec overwrite {} \;
 find . -name \*.WCHAR_TYPE_SIZE_32 -exec overwrite {} \;
 find . -name \*.DOUBLE_TYPE_SIZE_64 -exec overwrite {} \;
 find . -name \*.LONG_DOUBLE_TYPE_SIZE_64 -exec overwrite {} \;
+find . -name \*.MORE_THAN_64K -exec overwrite {} \;
 find . -name \*.gcc -exec overwrite {} \;
 find . -name \*.ppc -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;

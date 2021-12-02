@@ -13,6 +13,7 @@ find . -name \*.WCHAR_TYPE_short -exec overwrite {} \;
 find . -name \*.WCHAR_TYPE_SIZE_16 -exec overwrite {} \;
 find . -name \*.DOUBLE_TYPE_SIZE_64 -exec overwrite {} \;
 find . -name \*.LONG_DOUBLE_TYPE_SIZE_64 -exec overwrite {} \;
+find . -name \*.MORE_THAN_64K -exec takeoff {} \;
 find . -name \*.gcc -exec overwrite {} \;
 find . -name \*.m68hc11 -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;
