@@ -34,7 +34,6 @@ find . -name \*.MORE_THAN_64K -exec overwrite {} \;
 find . -name '*.vs' -exec overwrite {} \;
 find . -name '*.conly' -exec overwrite {} \;
 if ($INTEL_DLL_MS_MODE == 0) then
-  find . -name '*.intel' -exec overwrite {} \;
   find . -name '*.normal' -exec overwrite {} \;
 else
   find . -name '*.ms' -exec overwrite {} \;

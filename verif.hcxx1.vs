@@ -34,7 +34,6 @@ find . -name '*.hcc1' -exec overwrite {} \;
 find . -name '*.vs' -exec overwrite {} \;
 find . -name '*.conly' -exec takeoff {} \;
 if ($INTEL_DLL_MS_MODE == 0) then
-  find . -name '*.intel' -exec overwrite {} \;
   find . -name '*.normal' -exec overwrite {} \;
 else
   find . -name '*.ms' -exec overwrite {} \;
