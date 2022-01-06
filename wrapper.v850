@@ -7,12 +7,16 @@ setenv LANG C
 set date1 = `date +%m.%d.%H.%M`
 echo $date1
 
-cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899
-verif.v850 >& ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
-pass_count.pl ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
-filter.pl v850_known_bug gcc_known_bug > v850_known_bug.filter
-sh v850_known_bug.filter ~/garbage/41_ISO_IEC_9899.log.gxx.$date1 > ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
-echo ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
+#cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899
+#verif.v850 >& ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
+#pass_count.pl ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
+#filter.pl v850_known_bug gcc_known_bug > v850_known_bug.filter
+#sh v850_known_bug.filter ~/garbage/41_ISO_IEC_9899.log.gxx.$date1 > ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
+#echo ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
+
+cd $LANG_PROJECT_ROOT/53_GNU_tool/gcc_cross/V850/test
+verif.v850 >& ~/garbage/V850.log.$date1
+pass_count.pl ~/garbage/V850.log.$date1
 
 exit
 

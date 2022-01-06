@@ -7,12 +7,16 @@ setenv LANG C
 set date1 = `date +%m.%d.%H.%M`
 echo $date1
 
-cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899
-verif.msp430 >& ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
-pass_count.pl ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
-filter.pl msp430_known_bug gcc_known_bug > msp430_known_bug.filter
-sh msp430_known_bug.filter ~/garbage/41_ISO_IEC_9899.log.gxx.$date1 > ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
-echo ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
+#cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899
+#verif.msp430 >& ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
+#pass_count.pl ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
+#filter.pl msp430_known_bug gcc_known_bug > msp430_known_bug.filter
+#sh msp430_known_bug.filter ~/garbage/41_ISO_IEC_9899.log.gxx.$date1 > ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
+#echo ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
+
+cd $LANG_PROJECT_ROOT/53_GNU_tool/gcc_cross/MSP430/test
+verif.msp430 >& ~/garbage/MSP430.log.$date1
+pass_count.pl ~/garbage/MSP430.log.$date1
 
 exit
 

@@ -11,7 +11,7 @@ $other = 0;
 
 while ( <> ){
     chop;
-    if ( /^wdog.exe -v diff/ ){
+    if ( /^wdog.exe -v diff/ || /^PASS/ ){
 	$_ = <>;
 	chop;
 	++$pass if ( /^touch/ );
