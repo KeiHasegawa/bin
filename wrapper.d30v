@@ -1,0 +1,37 @@
+#! /bin/csh -vxf
+
+echo "pid : $$"
+
+setenv LANG C
+
+set date1 = `date +%m.%d.%H.%M`
+echo $date1
+
+cd $LANG_PROJECT_ROOT/41_ISO_IEC_9899
+verif.d30v >& ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
+pass_count.pl ~/garbage/41_ISO_IEC_9899.log.gxx.$date1
+filter.pl d30v_known_bug gcc_known_bug > d30v_known_bug.filter
+sh d30v_known_bug.filter ~/garbage/41_ISO_IEC_9899.log.gxx.$date1 > ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
+echo ~/garbage/41_ISO_IEC_9899.log.gxx.$date1.filtered
+
+exit
+
+cd $LANG_PROJECT_ROOT/53_GNU_tool/gcc_cross/D30V/test
+verif.d30v >& ~/garbage/D30V.log.$date1
+pass_count.pl ~/garbage/D30V.log.$date1
+
+exit
+
+cd $LANG_PROJECT_ROOT/42_C2nd
+verif.d30v >& ~/garbage/42_C2nd.log.gxx.$date1
+pass_count.pl ~/garbage/42_C2nd.log.gxx.$date1
+
+set date2 = `date +%m.%d.%H.%M`
+echo $date2
+
+cd $LANG_PROJECT_ROOT/43_ISO_IEC_14882
+verif.d30v >& ~/garbage/43_ISO_IEC_14882.log.gxx.$date2
+pass_count.pl ~/garbage/43_ISO_IEC_14882.log.gxx.$date2
+
+date +%m.%d.%H.%M
+
