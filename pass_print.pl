@@ -5,7 +5,7 @@ while ( <> ){
     if ( /Entering directory [\'`](.*)\'/ ) {
        $dir = $1;
     }
-    if ( /wdog.exe -v diff/ ){
+    if ( /wdog.exe -v diff/ || /^PASS/ ){
 	$_ = <>;
 	chop;
 	if ( /^touch (.*)/ ){
